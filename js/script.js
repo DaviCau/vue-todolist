@@ -22,6 +22,13 @@ var app = new Vue ({
         inputField: ""
     },
     methods: {
+        taskDone: function(indexDone) {
+            if (this.toDoList[indexDone].completed) {
+                this.toDoList[indexDone].completed = false;
+            } else {
+                this.toDoList[indexDone].completed = true;
+            }
+        },
         removeToDo: function(indexToRemove) {
             this.toDoList.splice(indexToRemove, 1)
         },
